@@ -12,9 +12,9 @@ public class Button : MonoBehaviour {
 	public bool step3;
 
 	void Start (){
-		button1 =new ButtonPress();
-		button2 = new ButtonPress2();
-		button3 = new ButtonPress3();
+		button1 = GameObject.Find("Button1");
+		button2 = GameObject.Find("Button2");
+		button3 = GameObject.Find("Button3");
 	}
 	// Update is called once per frame
 	void Update () {
@@ -24,7 +24,7 @@ public class Button : MonoBehaviour {
 		if (button2.button2down&&step1) {
 			step2=true;
 		}
-		if (button3.button3down && step1) {
+		if (button3.button3down && step1&&step2==false) {
 			step1=false;}
 
 		if(button3.button3down&&step2){
